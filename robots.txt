@@ -1,4 +1,4 @@
-Sitemap: sitemap.xml
+Sitemap: https://peppy-tulumba-8f6533.netlify.app/sitemap.xml
 
 User-agent: *
 Disallow:
