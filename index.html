@@ -19,119 +19,138 @@
         </style>
     </head>
 
-    <body>
+
         {{ insert nav.html }}
-        <div class="container py-4 px-3 mx-auto">
-            <div
-                id="myCarousel"
-                class="carousel slide mb-6"
-                data-bs-ride="carousel"
-            >
-                <div class="carousel-indicators">
-                    <button
-                        type="button"
-                        data-bs-target="#myCarousel"
-                        data-bs-slide-to="0"
-                        class="active"
-                        aria-current="true"
-                        aria-label="Slide 1"
-                    ></button>
-                    <button
-                        type="button"
-                        data-bs-target="#myCarousel"
-                        data-bs-slide-to="1"
-                        aria-label="Slide 2"
-                    ></button>
-                    <button
-                        type="button"
-                        data-bs-target="#myCarousel"
-                        data-bs-slide-to="2"
-                        aria-label="Slide 3"
-                    ></button>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-6 col-sm-4">
+                    <h2 class="featurette-heading fw-normal lh-1">
+                        Research and Analytics.
+                        <span class="text-body-secondary">We do [stuff].</span>
+                    </h2>
+                    <p class="lead">
+                        Not only [stuff] but [things] as well!
+                    </p>
+                    <a class="btn btn-lg btn-info" href="#"
+                        >Learn more</a
+                    >
                 </div>
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <img src="assets/air.jpg" />
-                        <div class="container">
-                            <div class="carousel-caption text-start">
-                                <h1 style="color: black">
-                                    Low compliance to the most important
-                                    policies.
-                                </h1>
-                                <p class="opacity-75">
-                                    Only 3% of unstable approaches lead to a
-                                    go-around in accordance with procedures.
-                                </p>
-                                <p>
-                                    <a class="btn btn-lg btn-primary" href="#"
-                                        >Read the Report</a
-                                    >
-                                </p>
+
+                <div class="col-6 col-sm">
+                    <div
+                    id="myCarousel"
+                    class="carousel slide mb-6"
+                    data-bs-ride="carousel"
+                    >
+                        <div class="carousel-indicators">
+                            <button
+                                type="button"
+                                data-bs-target="#myCarousel"
+                                data-bs-slide-to="0"
+                                class="active"
+                                aria-current="true"
+                                aria-label="Slide 1"
+                            ></button>
+                            <button
+                                type="button"
+                                data-bs-target="#myCarousel"
+                                data-bs-slide-to="1"
+                                aria-label="Slide 2"
+                            ></button>
+                            <button
+                                type="button"
+                                data-bs-target="#myCarousel"
+                                data-bs-slide-to="2"
+                                aria-label="Slide 3"
+                            ></button>
+                        </div>
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="assets/air.jpg" />
+                                <div class="container">
+                                    <div class="carousel-caption text-start">
+                                    <h1 style="color: black">
+                                        Low compliance to the most important
+                                        policies.
+                                    </h1>
+                                    <p class="opacity-75">
+                                        Only 3% of unstable approaches lead to a
+                                        go-around in accordance with procedures.
+                                    </p>
+                                    <p>
+                                        <a class="btn btn-lg btn-primary" href="#"
+                                            >Read the Report</a
+                                        >
+                                    </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <img src="assets/nuclear.jpg" />
+                                <div class="container">
+                                    <div class="carousel-caption">
+                                    <h1>
+                                        70% of incidents are traced to human error.
+                                    </h1>
+                                    <p>
+                                        Human error is the biggest risk factor for
+                                        utilities and nuclear operations.
+                                    </p>
+                                    <p>
+                                        <a class="btn btn-lg btn-info" href="#"
+                                            >Learn more</a
+                                        >
+                                    </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <img src="assets/medical.jpg" />
+                                <div class="container">
+                                <div class="carousel-caption text-end">
+                                    <h1 style=""color:white;">An issue across industries.</h1>
+                                    <p style="color: black">
+                                        Medical errors account for 25,000 to 30,000
+                                        preventable deaths in the US per year.
+                                    </p>
+                                    <p>
+                                        <a class="btn btn-lg btn-danger" href="#"
+                                            >Browse gallery</a
+                                        >
+                                    </p>
+                                </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="carousel-item">
-                        <img src="assets/nuclear.jpg" />
-                        <div class="container">
-                            <div class="carousel-caption">
-                                <h1>
-                                    70% of incidents are traced to human error.
-                                </h1>
-                                <p>
-                                    Human error is the biggest risk factor for
-                                    utilities and nuclear operations.
-                                </p>
-                                <p>
-                                    <a class="btn btn-lg btn-info" href="#"
-                                        >Learn more</a
-                                    >
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <img src="assets/medical.jpg" />
-                        <div class="container">
-                            <div class="carousel-caption text-end">
-                                <h1 style=""color:white;">An issue across industries.</h1>
-                                <p style="color: black">
-                                    Medical errors account for 25,000 to 30,000
-                                    preventable deaths in the US per year.
-                                </p>
-                                <p>
-                                    <a class="btn btn-lg btn-danger" href="#"
-                                        >Browse gallery</a
-                                    >
-                                </p>
-                            </div>
-                        </div>
+                        <button
+                            class="carousel-control-prev"
+                            type="button"
+                            data-bs-target="#myCarousel"
+                            data-bs-slide="prev"
+                        >
+                        <span
+                            class="carousel-control-prev-icon"
+                            aria-hidden="true"
+                        ></span>
+                        <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button
+                            class="carousel-control-next"
+                            type="button"
+                            data-bs-target="#myCarousel"
+                            data-bs-slide="next"
+                        >
+                        <span
+                            class="carousel-control-next-icon"
+                            aria-hidden="true"
+                        ></span>
+                        <span class="visually-hidden">Next</span>
+                        </button>
                     </div>
                 </div>
-                <button
-                    class="carousel-control-prev"
-                    type="button"
-                    data-bs-target="#myCarousel"
-                    data-bs-slide="prev"
-                >
-                    <span
-                        class="carousel-control-prev-icon"
-                        aria-hidden="true"
-                    ></span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <button
-                    class="carousel-control-next"
-                    type="button"
-                    data-bs-target="#myCarousel"
-                    data-bs-slide="next"
-                >
-                    <span
-                        class="carousel-control-next-icon"
-                        aria-hidden="true"
-                    ></span>
-                    <span class="visually-hidden">Next</span>
-                </button>
             </div>
+
 
             <!-- Marketing messaging and featurettes
   ================================================== -->
