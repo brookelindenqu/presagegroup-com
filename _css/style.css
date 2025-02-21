@@ -417,7 +417,6 @@ body {
     box-shadow: 0 0.125rem 0.25rem rgb(0 0 0 / 8%) !important;
 }
 
-@import url(//fonts.googleapis.com/css?family=Montserrat:300,400,500);
 .contact2 {
     font-family: "Montserrat", sans-serif;
     color: #8d97ad;
@@ -515,8 +514,6 @@ body {
     background: -o-linear-gradient(left, #ff6a5b 0%, #ff4d7e 100%);
     background: linear-gradient(to right, #ff6a5b 0%, #ff4d7e 100%);
 }
-
-@import url("https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap");
 
 * {
     margin: 0;
