@@ -1,110 +1,28 @@
 <!doctype html>
 <html lang="en" data-bs-theme="auto">
     {{ insert head.html }}
-    <h2 class="font-weight-light text-center text-muted py-3">
-        Current Open Positions
-    </h2>
-    <hr class="featurette-divider" />
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-4 col-md-6 col-sm-6">
-                <div class="category mb-30">
-                    <div class="job">
-                        <span class="colors1 mb-4">Data Science</span>
-                        <h5>
-                            <a href="#">Shiny App Developer</a>
-                        </h5>
-                        <ul class="place">
-                            <li>
-                                <p>
-                                    <i class="fas fa-map-marker-alt pe-2"></i>
-                                    Remote, Canada
-                                </p>
-                            </li>
-                            <li>
-                                <p class="ps-5">
-                                    <i class="fas fa-map-marker-alt pe-2"></i
-                                    >Full Time
-                                </p>
-                            </li>
-                        </ul>
-                        <div
-                            class="d-flex align-items-center justify-content-between"
-                        >
-                            <div class="left">
-                                <p>Analytics</p>
-                            </div>
-                            <span class="time">Feb '25</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-6">
-                <div class="category mb-30">
-                    <div class="job">
-                        <span class="colors2 mb-4">Admin</span>
-                        <h5>
-                            <a href="#">Project Manager</a>
-                        </h5>
-                        <ul class="place">
-                            <li>
-                                <p>
-                                    <i class="fas fa-map-marker-alt pe-2"></i>
-                                    Burlington, CA
-                                </p>
-                            </li>
-                            <li>
-                                <p class="ps-5">
-                                    <i class="fas fa-map-marker-alt pe-2"></i
-                                    >Full Time
-                                </p>
-                            </li>
-                        </ul>
-                        <div
-                            class="pricing d-flex justify-content-between align-items-center"
-                        >
-                            <div class="left">
-                                <p>Presage Burlington</p>
-                            </div>
-                            <span class="time">Feb '25</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-6">
-                <div class="category mb-30">
-                    <div class="job">
-                        <span class="colors4 mb-4">Research</span>
-                        <h5>
-                            <a href="#">Intern</a>
-                        </h5>
-                        <ul class="place">
-                            <li>
-                                <p>
-                                    <i class="fas fa-map-marker-alt pe-2"></i>
-                                    Remote, CA
-                                </p>
-                            </li>
-                            <li>
-                                <p class="ps-5">
-                                    <i class="fas fa-map-marker-alt pe-2"></i
-                                    >Full Time
-                                </p>
-                            </li>
-                        </ul>
-                        <div
-                            class="pricing d-flex justify-content-between align-items-center"
-                        >
-                            <div class="left">
-                                <p>Research Department</p>
-                            </div>
-                            <span class="time">Feb '25</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <section class="relative py-16 bg-white min-w-screen animation-fade animation-delay">
+    <div class="container px-0 px-8 mx-auto sm:px-12 xl:px-5">
+        <h3 class="mt-1 text-2xl font-bold text-left text-gray-800 sm:mx-6 sm:text-3xl md:text-4xl lg:text-5xl sm:text-center sm:mx-0">
+            Open Positions
+        </h3>
+        <div class="w-full px-6 py-6 mx-auto mt-10 bg-white border border-gray-200 rounded-lg sm:px-8 md:px-12 sm:py-8 sm:shadow lg:w-5/6 xl:w-2/3" data-rounded="rounded-lg" data-rounded-max="rounded-full">
+            <h3 class="text-lg font-bold text-indigo-600 sm:text-xl md:text-2xl" data-primary="indigo-600">Data Analyst</h3>
+            <p class="mt-2 text-base text-gray-600 sm:text-lg md:text-normal">
+                Work with the Analytics and Research teams to solve problems with data. Master's degree in Statistics or related field or equivalent experience required.
+            </p>
         </div>
+        <div class="w-full px-6 py-6 mx-auto mt-10 bg-white border border-gray-200 rounded-lg sm:px-8 md:px-12 sm:py-8 sm:shadow lg:w-5/6 xl:w-2/3" data-rounded="rounded-lg" data-rounded-max="rounded-full">
+            <h3 class="text-lg font-bold text-indigo-600 sm:text-xl md:text-2xl" data-primary="indigo-600">Subject Matter Expert</h3>
+            <p class="mt-2 text-base text-gray-600 sm:text-lg md:text-normal">
+                Apply your expertise in one of our target industries to answer our clients' questions. 15 or more years of experience in a specific industry required.
+            </p>
+        </div>
+
+        <p class="text-s font-bold text-left text-indigo-500 uppercase sm:mx-10 py-8 sm:text-center sm:text-normal sm:font-bold" data-primary="pink-500">
+            Email resume to careers at presagegroup.com
+        </p>
     </div>
-    <hr class="featurette-divider" />
+</section>
     {{ insert foot.html}}
 </html>
