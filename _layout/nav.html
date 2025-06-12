@@ -25,77 +25,73 @@
                     }"
     class="relative z-10 items-center w-full h-24"
 >
-    <div class="relative">
-        <ul
-            class="flex items-center justify-left flex-1 p-1 space-x-1 list-none border rounded-sm text-white bg-[#00415b] group border-neutral-200/80"
-        >
-            <img src="/assets/PresageLogo.png" height="30" width="30" />
-            &nbsp;presage &nbsp;&nbsp;
-            <li>
-                <a
-                    href="/"
-                    class="inline-flex items-center justify-center h-10 px-4 py-2 text-sm font-medium transition-colors rounded-md hover:bg-[#00638a] focus:outline-none disabled:opacity-50 disabled:pointer-events-none bg-background hover:bg-[#00638a] group w-max"
+    <div class="relative flex flex-wrap items-start justify-between w-full mx-auto font-medium md:items-center md:h-24 md:justify-between">
+        <a href="/" class="flex items-center w-1/4 py-4 pl-6 pr-4 space-x-2 font-extrabold text-white md:py-0">
+            <img src="/assets/Presage_Logo_noTXT.svg" height="150" width="150" />
+        </a>
+        <div class="absolute z-50 flex-col items-center justify-center w-full h-auto px-2 py-2 text-center text-gray-400 -translate-x-1/2 border-gray-500 rounded-md md:border md:w-auto md:h-10 left-1/2 md:flex-row md:items-center">
+            <a
+                href="/"
+                class="inline-flex items-center justify-center h-10 px-4 py-2 text-xl font-medium text-gray-700 rounded-md hover:text-neutral-100 hover:bg-[#00638a] focus:outline-none disabled:opacity-50 disabled:pointer-events-none bg-background hover:bg-[#00638a] group w-max"
+            >
+                Home
+            </a>
+            <button
+                :class="{ 'bg-[#00638a]' : navigationMenu=='about-us', 'hover:bg-[#00638a]' : navigationMenu!='about-us' }"
+                @mouseover="navigationMenuOpen=true; navigationMenuReposition($el); navigationMenu='about-us'"
+                @mouseleave="navigationMenuLeave()"
+                class="inline-flex items-center justify-center h-10 px-4 py-2 text-xl text-gray-700 font-medium transition-colors rounded-md hover:text-neutral-100 focus:outline-none focus:text-neutral-100 disabled:opacity-50 hover:bg-[#00638a] focus:bg-[#00638a] disabled:pointer-events-none group w-max"
+            >
+                <span>About Us</span>
+                <svg
+                    :class="{ '-rotate-180' : navigationMenuOpen==true && navigationMenu == 'about-us' }"
+                    class="relative top-[1px] ml-1 h-3 w-3 ease-out duration-300"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
                 >
-                    Home
-                </a>
-            </li>
-            <li>
-                <button
-                    :class="{ 'bg-[#00638a]' : navigationMenu=='about-us', 'hover:bg-[#00638a]' : navigationMenu!='about-us' }"
-                    @mouseover="navigationMenuOpen=true; navigationMenuReposition($el); navigationMenu='about-us'"
-                    @mouseleave="navigationMenuLeave()"
-                    class="inline-flex items-center justify-center h-10 px-4 py-2 text-sm font-medium transition-colors rounded-md hover:text-neutral-100 focus:outline-none focus:text-neutral-100 disabled:opacity-50 hover:bg-[#00638a] focus:bg-[#00638a] disabled:pointer-events-none group w-max"
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+            </button>
+            <button
+                :class="{ 'bg-[#00638a]' : navigationMenu=='learn-more', 'hover:bg-[#00638a]' : navigationMenu!='learn-more' }"
+                @mouseover="navigationMenuOpen=true; navigationMenuReposition($el); navigationMenu='learn-more'"
+                @mouseleave="navigationMenuLeave()"
+                class="inline-flex items-center justify-center h-10 px-4 py-2 text-xl text-gray-700 font-medium transition-colors rounded-md hover:text-neutral-100 focus:outline-none focus:text-neutral-100 disabled:opacity-50 hover:bg-[#00638a] focus:bg-[#00638a] disabled:pointer-events-none group w-max"
+            >
+                <span>Services</span>
+                <svg
+                    :class="{ '-rotate-180' : navigationMenuOpen==true && navigationMenu == 'learn-more' }"
+                    class="relative top-[1px] ml-1 h-3 w-3 ease-out duration-300"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
                 >
-                    <span>About Us</span>
-                    <svg
-                        :class="{ '-rotate-180' : navigationMenuOpen==true && navigationMenu == 'about-us' }"
-                        class="relative top-[1px] ml-1 h-3 w-3 ease-out duration-300"
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        aria-hidden="true"
-                    >
-                        <polyline points="6 9 12 15 18 9"></polyline>
-                    </svg>
-                </button>
-            </li>
-            <li>
-                <button
-                    :class="{ 'bg-[#00638a]' : navigationMenu=='learn-more', 'hover:bg-[#00638a]' : navigationMenu!='learn-more' }"
-                    @mouseover="navigationMenuOpen=true; navigationMenuReposition($el); navigationMenu='learn-more'"
-                    @mouseleave="navigationMenuLeave()"
-                    class="inline-flex items-center justify-center h-10 px-4 py-2 text-sm font-medium transition-colors rounded-md hover:text-neutral-100 focus:outline-none focus:text-neutral-100 disabled:opacity-50 hover:bg-[#00638a] focus:bg-[#00638a] disabled:pointer-events-none group w-max"
-                >
-                    <span>Services</span>
-                    <svg
-                        :class="{ '-rotate-180' : navigationMenuOpen==true && navigationMenu == 'learn-more' }"
-                        class="relative top-[1px] ml-1 h-3 w-3 ease-out duration-300"
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        aria-hidden="true"
-                    >
-                        <polyline points="6 9 12 15 18 9"></polyline>
-                    </svg>
-                </button>
-            </li>
-            <li>
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+            </button>
+        </div>
+        
+        <div class="fixed top-0 left-0 z-40 items-center hidden w-full h-full p-3 text-sm bg-gray-900 bg-opacity-50 md:w-auto md:bg-transparent md:p-0 md:relative md:flex">
+            <div class="flex flex-col items-center justify-end w-full h-full pt-2 md:w-full md:flex-row md:py-0">
                 <a
                     href="/pages/contact/"
-                    class="inline-flex items-center justify-center h-10 px-4 py-2 text-sm font-medium transition-colors rounded-md hover:text-neutral-100 focus:outline-none focus:text-neutral-100 disabled:opacity-50 hover:bg-[#00638a] focus:bg-[#00638a] disabled:pointer-events-none group w-max"
+                    class="inline-flex items-center justify-center h-10 px-4 py-2 text-xl text-gray-100 bg-[#00638a] font-medium transition-colors rounded-md hover:text-neutral-100 focus:outline-none focus:text-neutral-100 disabled:opacity-50 hover:bg-[#00638a] focus:bg-[#00638a] disabled:pointer-events-none group w-max"
                 >
                     Contact Us
                 </a>
-            </li>
-        </ul>
+            </div>
+        </div>
     </div>
     <div
         x-ref="navigationDropdown"
@@ -108,7 +104,7 @@
         x-transition:leave-end="opacity-0 scale-90"
         @mouseover="navigationMenuClearCloseTimeout()"
         @mouseleave="navigationMenuLeave()"
-        class="absolute top-0 pt-3 duration-200 ease-out -translate-x-1/2 translate-y-11"
+        class="absolute top-0 pt-3 duration-200 ease-out translate-y-20"
         x-cloak
     >
         <div
@@ -122,7 +118,7 @@
                     class="flex-shrink-0 w-48 rounded pt-28 pb-7 bg-gradient-to-br from-neutral-800 to-[#00415b]"
                 >
                     <img
-                        src="/assets/Presage_Logo_noTXT.svg"
+                        src="/assets/Presage_Logo_TXTwhite.svg"
                         style="width: 300px; height: 300px"
                     />
                     <div class="relative px-7 text-white">
