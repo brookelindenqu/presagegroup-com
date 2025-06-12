@@ -1,35 +1,35 @@
 <nav
     x-data="{
-                        navigationMenuOpen: false,
-                        navigationMenu: '',
-                        navigationMenuCloseDelay: 200,
-                        navigationMenuCloseTimeout: null,
-                        navigationMenuLeave() {
-                            let that = this;
-                            this.navigationMenuCloseTimeout = setTimeout(() => {
-                                that.navigationMenuClose();
-                            }, this.navigationMenuCloseDelay);
-                        },
-                        navigationMenuReposition(navElement) {
-                            this.navigationMenuClearCloseTimeout();
-                            this.$refs.navigationDropdown.style.left = navElement.offsetLeft + 'px';
-                            this.$refs.navigationDropdown.style.marginLeft = (navElement.offsetWidth/2) + 'px';
-                        },
-                        navigationMenuClearCloseTimeout(){
-                            clearTimeout(this.navigationMenuCloseTimeout);
-                        },
-                        navigationMenuClose(){
-                            this.navigationMenuOpen = false;
-                            this.navigationMenu = '';
-                        }
-                    }"
+        navigationMenuOpen: false,
+        navigationMenu: '',
+        navigationMenuCloseDelay: 200,
+        navigationMenuCloseTimeout: null,
+        navigationMenuLeave() {
+            let that = this;
+            this.navigationMenuCloseTimeout = setTimeout(() => {
+                that.navigationMenuClose();
+            }, this.navigationMenuCloseDelay);
+        },
+        navigationMenuReposition(navElement) {
+            this.navigationMenuClearCloseTimeout();
+            this.$refs.navigationDropdown.style.left = navElement.getBoundingClientRect().left + 'px';
+            this.$refs.navigationDropdown.style.marginLeft = (navElement.offsetWidth/2) + 'px';
+        },
+        navigationMenuClearCloseTimeout(){
+            clearTimeout(this.navigationMenuCloseTimeout);
+        },
+        navigationMenuClose(){
+            this.navigationMenuOpen = false;
+            this.navigationMenu = '';
+        }
+    }"
     class="relative z-10 items-center w-full h-24"
 >
-    <div class="relative flex flex-wrap items-start justify-between w-full mx-auto font-medium md:items-center md:h-24 md:justify-between">
-        <a href="/" class="flex items-center w-1/4 py-4 pl-6 pr-4 space-x-2 font-extrabold text-white md:py-0">
+    <div class="relative flex flex-wrap items-start w-full mx-auto font-medium md:items-center justify-between md:h-24">
+        <a href="/" class="flex items-center py-4 pl-6 font-extrabold text-white md:py-0">
             <img src="/assets/Presage_Logo_noTXT.svg" height="150" width="150" />
         </a>
-        <div class="absolute z-50 flex-col items-center justify-center w-full h-auto px-2 py-2 text-center text-gray-400 -translate-x-1/2 border-gray-500 rounded-md md:border md:w-auto md:h-10 left-1/2 md:flex-row md:items-center">
+        <div class="relative z-50 flex-col items-center justify-center w-1/2 h-auto px-2 py-2 text-center text-gray-400 border-gray-500 rounded-md md:border md:w-auto md:h-10 md:flex-row md:items-center">
             <a
                 href="/"
                 class="inline-flex items-center justify-center h-10 px-4 py-2 text-xl font-medium text-gray-700 rounded-md hover:text-neutral-100 hover:bg-[#00638a] focus:outline-none disabled:opacity-50 disabled:pointer-events-none bg-background hover:bg-[#00638a] group w-max"
@@ -82,7 +82,7 @@
             </button>
         </div>
         
-        <div class="fixed top-0 left-0 z-40 items-center hidden w-full h-full p-3 text-sm bg-gray-900 bg-opacity-50 md:w-auto md:bg-transparent md:p-0 md:relative md:flex">
+        <div class="relative top-0 left-0 z-40 items-center hidden w-1/4 h-full p-3 text-sm bg-gray-900 bg-opacity-50 md:w-auto md:bg-transparent md:p-0 md:relative md:flex">
             <div class="flex flex-col items-center justify-end w-full h-full pt-2 md:w-full md:flex-row md:py-0">
                 <a
                     href="/pages/contact/"
@@ -104,7 +104,7 @@
         x-transition:leave-end="opacity-0 scale-90"
         @mouseover="navigationMenuClearCloseTimeout()"
         @mouseleave="navigationMenuLeave()"
-        class="absolute top-0 pt-3 duration-200 ease-out translate-y-20"
+        class="absolute top-0 pt-3 duration-200 ease-out -translate-x-1/2 translate-y-20"
         x-cloak
     >
         <div
