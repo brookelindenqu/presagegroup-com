@@ -6,8 +6,9 @@ body {
     padding-top: 3rem;
     padding-bottom: 3rem;
     color: rgb(var(--bs-tertiary-color-rgb));
-    font-family: -apple-system, "Roboto", "Segoe UI", "Helvetica Neue",
-        "Lucida Grande", Arial, sans-serif;
+    font-family:
+        -apple-system, "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande",
+        Arial, sans-serif;
 }
 
 /* CUSTOMIZE THE CAROUSEL
@@ -77,6 +78,58 @@ body {
 @media (min-width: 62em) {
     .featurette-heading {
         margin-top: 7rem;
+    }
+}
+
+@media (max-width: 40em) {
+    /* Make the image responsive */
+    .rounded-md,
+    .sm:rounded-xl,
+    .object-cover,
+    .w-full {
+        width: 100%;
+        height: auto;
+    }
+
+    /* Adjust text sizes and margins */
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-size: 1.5rem;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+
+    /* Ensure buttons are full-width on small screens */
+    .sm:w-auto {
+        width: 100%;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #121212;
+        color: #ffffff;
+    }
+    .bg-white {
+        background-color: #1e1e1e !important;
+    }
+    .text-gray-900,
+    .text-gray-500 {
+        color: #ffffff !important;
+    }
+    /* Additional dark mode styles for the Read More button */
+    a.bg-[#00416b] {
+        background-color: #00416b !important;
+        color: #ffffff !important;
+    }
+    a.hover:bg-[#00638a]:hover {
+        background-color: #00638a !important;
     }
 }
 
@@ -292,8 +345,9 @@ h5 a:visited {
     display: inline-block;
     padding-top: 5px;
     padding-bottom: 5px;
-    font-family: -apple-system, "Roboto", "Segoe UI", "Helvetica Neue",
-        "Lucida Grande", Arial, sans-serif;
+    font-family:
+        -apple-system, "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande",
+        Arial, sans-serif;
     font-size: 0.75em;
     text-transform: uppercase;
 }
