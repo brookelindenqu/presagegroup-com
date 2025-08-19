@@ -29,6 +29,7 @@ end
         tags = pagevar(fi, :tags; default = [""])
         author = pagevar(fi, :author)
         short_text = pagevar(fi, :short_text)
+        img_path = pagevar(fi, :img_src)
         if !isnothing(datestr)
             date = Date(datestr, df)
             push!(posts, (
@@ -37,7 +38,8 @@ end
               date=date, 
               tags=tags, 
               author=author,
-              short_text=short_text
+              short_text=short_text,
+              img_path=img_path
             ))
         end
     end
@@ -60,7 +62,7 @@ end
     """
 
     for ele in eles[2:min(length(posts), n)]
-        html *= grid_post(ele.title, ele.link, ele.date, ele.short_text, ele.author; tags = ele.tags)
+        html *= grid_post(ele.title, ele.link, ele.date, ele.short_text, ele.author; tags = ele.tags, img = ele.img_path)
     end
 
     html *= """
