@@ -25,16 +25,24 @@
     }"
     class="relative z-10 items-center w-full h-24"
 >
-    <div class="relative flex flex-wrap items-start w-full mx-auto font-medium md:items-center justify-between md:h-24">
+    <div
+        class="relative flex flex-wrap items-start w-full mx-auto font-medium md:items-center justify-between md:h-24"
+    >
         <a href="/" class="flex items-center font-extrabold text-white md:py-0">
-            <img src="/assets/Presage_Logo_noTXT.svg" height="150" width="150" />
+            <img
+                src="/assets/Presage_Logo_noTXT.svg"
+                height="150"
+                width="150"
+            />
         </a>
-        <div class="relative z-50 flex-col items-center justify-center w-1/2 h-auto px-2 py-2 text-center text-gray-400 border-gray-300 rounded-md md:border md:w-auto md:h-10 md:flex-row md:items-center">
+        <div
+            class="relative z-50 flex-col items-center justify-center w-1/2 h-auto px-2 py-2 text-center text-gray-400 rounded-md md:w-auto md:h-10 md:flex-row md:items-center"
+        >
             <a
                 href="/"
                 class="inline-flex items-center justify-center h-10 px-4 py-2 text-xl font-medium text-gray-700 rounded-md hover:text-neutral-100 hover:bg-[#00638a] focus:outline-none disabled:opacity-50 disabled:pointer-events-none bg-background hover:bg-[#00638a] group w-max"
             >
-                Home
+                HOME
             </a>
             <button
                 :class="{ 'bg-[#00638a]' : navigationMenu=='about-us', 'hover:bg-[#00638a]' : navigationMenu!='about-us' }"
@@ -42,7 +50,7 @@
                 @mouseleave="navigationMenuLeave()"
                 class="inline-flex items-center justify-center h-10 px-4 py-2 text-xl text-gray-700 font-medium transition-colors rounded-md hover:text-neutral-100 focus:outline-none focus:text-neutral-100 disabled:opacity-50 hover:bg-[#00638a] focus:bg-[#00638a] disabled:pointer-events-none group w-max"
             >
-                <span>About Us</span>
+                <span>ABOUT US</span>
                 <svg
                     :class="{ '-rotate-180' : navigationMenuOpen==true && navigationMenu == 'about-us' }"
                     class="relative top-[1px] ml-1 h-3 w-3 ease-out duration-300"
@@ -64,7 +72,7 @@
                 @mouseleave="navigationMenuLeave()"
                 class="inline-flex items-center justify-center h-10 px-4 py-2 text-xl text-gray-700 font-medium transition-colors rounded-md hover:text-neutral-100 focus:outline-none focus:text-neutral-100 disabled:opacity-50 hover:bg-[#00638a] focus:bg-[#00638a] disabled:pointer-events-none group w-max"
             >
-                <span>Services</span>
+                <span>SERVICES</span>
                 <svg
                     :class="{ '-rotate-180' : navigationMenuOpen==true && navigationMenu == 'learn-more' }"
                     class="relative top-[1px] ml-1 h-3 w-3 ease-out duration-300"
@@ -81,14 +89,18 @@
                 </svg>
             </button>
         </div>
-        
-        <div class="relative top-0 left-0 z-40 items-center hidden w-1/4 h-full px-3 text-sm bg-gray-900 bg-opacity-50 md:w-auto md:bg-transparent md:p-0 md:relative md:flex">
-            <div class="flex flex-col items-center justify-end w-full h-full pt-2 md:w-full md:flex-row md:py-0">
+
+        <div
+            class="relative top-0 left-0 z-40 items-center hidden w-1/4 h-full px-3 text-sm bg-gray-900 bg-opacity-50 md:w-auto md:bg-transparent md:p-0 md:relative md:flex"
+        >
+            <div
+                class="flex flex-col items-center justify-end w-full h-full pt-2 md:w-full md:flex-row md:py-0"
+            >
                 <a
                     href="/pages/contact/"
-                    class="inline-flex items-center justify-center h-10 px-4 py-2 text-xl text-gray-100 bg-[#00638a] font-medium transition-colors rounded-md hover:text-neutral-100 focus:outline-none focus:text-neutral-100 disabled:opacity-50 hover:bg-[#00638a] focus:bg-[#00638a] disabled:pointer-events-none group w-max"
+                    class="inline-flex items-center justify-center h-10 px-4 py-2 text-xl text-gray-100 bg-[#00416b] font-medium transition-colors rounded-xl hover:text-neutral-100 focus:outline-none focus:text-neutral-100 disabled:opacity-50 hover:bg-[#00638a] focus:bg-[#00638a] disabled:pointer-events-none group w-max"
                 >
-                    Contact Us
+                    WORK WITH US
                 </a>
             </div>
         </div>
@@ -177,7 +189,7 @@
                             >Join us to build the future of aviation.</span
                         >
                     </a>
-                     <a
+                    <a
                         href="/blog/"
                         @click="navigationMenuClose()"
                         class="block px-3.5 py-3 text-sm rounded hover:bg-neutral-100"
