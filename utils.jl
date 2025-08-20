@@ -32,10 +32,10 @@ end
         if !isnothing(datestr)
             date = Date(datestr, df)
             push!(posts, (
-              title=title, 
-              link=fi, 
-              date=date, 
-              tags=tags, 
+              title=title,
+              link=fi,
+              date=date,
+              tags=tags,
               author=author,
               short_text=short_text
             ))
@@ -77,7 +77,7 @@ end
 end
 
 function featured_post(title, link, date, short_text = "test", author = "Presage Group"; length = nothing, tags = nothing, img = nothing)
-  if isnothing(tags) 
+  if isnothing(tags)
     tag_html = ""
   else
     tag_html = reduce(*, format_tag.(tags))
@@ -91,10 +91,10 @@ function featured_post(title, link, date, short_text = "test", author = "Presage
 
   if isnothing(img)
     img_src = "/assets/Presage_Logo_noTXT.svg"
-  else 
+  else
     img_src = img
   end
-  
+
   html = """
   <div class="flex flex-col items-center sm:px-5 md:flex-row">
       <div class="w-full md:w-1/2">
@@ -104,7 +104,7 @@ function featured_post(title, link, date, short_text = "test", author = "Presage
       </div>
       <div class="flex flex-col items-start justify-center w-full h-full py-6 mb-6 md:mb-0 md:w-1/2">
           <div class="flex flex-col items-start justify-center h-full space-y-1 transform md:pl-10 lg:pl-16 md:space-y-2">
-              
+
               <h1 class="text-4xl font-bold leading-none mb-0 lg:text-5xl xl:text-6xl">
                 <a href="/$link/">$title.</a>
               </h1>
@@ -124,8 +124,8 @@ function featured_post(title, link, date, short_text = "test", author = "Presage
 end
 
 function grid_post(title, link, date, short_text = "test", author = "Presage Group"; length = nothing, tags = nothing, img = nothing)
-  
-  if isnothing(tags) 
+
+  if isnothing(tags)
     tag_html = ""
   else
     tag_html = reduce(*, format_tag.(tags))
@@ -139,7 +139,7 @@ function grid_post(title, link, date, short_text = "test", author = "Presage Gro
 
   if isnothing(img)
     img_src = "/assets/Presage_Logo_noTXT.svg"
-  else 
+  else
     img_src = img
   end
 
@@ -148,7 +148,7 @@ function grid_post(title, link, date, short_text = "test", author = "Presage Gro
       <a href="/$link/" class="block">
           <img class="object-cover w-full mb-2 overflow-hidden rounded-lg shadow-sm max-h-56" src="$img_src">
       </a>
-      
+
 
 
       <div class="flex flex-col w-full md:flex-row">
@@ -191,13 +191,12 @@ const tag_color_lookup = Dict{Int64,String}(
   10 => "lime-500",
   11 => "indigo-500"
 )
-  
+
 @delay function hfun_blog_header(title_img)
   html = """
   <section class="flex items-center justify-center py-10 text-white bg-white sm:py-16 md:py-24 lg:py-32">
     <div class="relative max-w-3xl px-10 text-center text-white auto lg:px-0">
         <div class="flex flex-col w-full md:flex-row">
-
             <!-- Top Text -->
             <div class="flex justify-between">
                 <h1 class="relative flex flex-col text-6xl font-extrabold text-left text-black">
@@ -205,23 +204,10 @@ const tag_color_lookup = Dict{Int64,String}(
                 </h1>
             </div>
             <!-- Right Image -->
-            <div class="relative top-0 right-0 h-64 mt-12 md:-mt-16 md:absolute md:h-96">
-                <img src="$(title_img[2])" class="object-cover mt-3 mr-5 h-80 lg:h-72 rounded-md">
+            <div class="relative top-0 right-0 h-64 mt-12 md:-mt-16 md:h-96">
+                <img src="$(title_img[2])" class="object-contain mt-3 mr-5 h-80 lg:h-72 rounded-md">
             </div>
         </div>
-
-        <!-- Separator -->
-        <div class="my-16 border-b border-gray-300 lg:my-24"></div>
-
-        <!-- Bottom Text -->
-        <h2 class="text-left text-gray-500 xl:text-xl">
-  """
-  return html
-end
-
-function hfun_blog_footer()
-  html =  """
-      </h2>
     </div>
   </section>
   """
@@ -233,7 +219,7 @@ function hfun_small_card(args)
   photo = args[2]
   title = args[3]
   bio = args[4]
-  
+
   links = args[5:end]
 
   link_html = """
@@ -266,7 +252,7 @@ function hfun_small_card(args)
   for link in 1:2:length(links)
     link_html *= profile_link(links[link], links[link+1])
   end
-  
+
   link_html *= """
         </ul>
       </div>
@@ -305,8 +291,8 @@ const icons = Dict{String,String}(
             ></path></svg
         ><!-- <i class="fab fa-linkedin-in fa-fw"></i> Font Awesome fontawesome.com --></a
     >
-  </li>    
-  """, 
+  </li>
+  """,
   "google scholar" => """
   <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -377,8 +363,4 @@ const icons = Dict{String,String}(
       ></path></svg
   ><!-- <i class="fab fa-linkedin-in fa-fw"></i> Font Awesome fontawesome.com --></a>
   </li>
-  """)               
-                        
-                            
-                                
-                            
+  """)
