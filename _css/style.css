@@ -570,15 +570,14 @@ body {
 }
 
 * {
-    margin: 0;
-    padding: 0;
     box-sizing: border-box;
     list-style: none;
     font-family: "Montserrat", sans-serif;
 }
 
 p {
-    margin: 0;
+    margin: 5%;
+    padding: 3%;
 }
 
 .category .job {
