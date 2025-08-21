@@ -3,13 +3,10 @@
 @def date = "2021-06-22"
 @def tags = ["Process"]
 @def short_text = "This week we’d like to share a video snippet with you titled The 9 constructs."
-@def img_src = "/assets/Presage_Logo_noTXT.svg"
-
+@def img = "/assets/Presage_Logo_noTXT.svg"
 @def rss_pubdate = Date(2021, 06, 22)
 
-~~~
-
-{{ blog_header "The <br> 9 Constructs" "/assets/PresageLogo.png" }}
+\blogheader{}
 
 Hey everyone!
 
@@ -20,7 +17,3 @@ This week we’d like to share a video snippet with you titled The 9 constructs.
 These constructs were created by our founder Dr. Martin Smith and are what we reference/implement to yield the results we do for our clients.
 
 For more info, please email info@presagegroup.com
-
-{{ blog_footer }}
-
-~~~

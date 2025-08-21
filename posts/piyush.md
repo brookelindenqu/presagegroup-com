@@ -3,12 +3,10 @@
 @def date = "2021-03-17"
 @def tags = ["team", "announcement"]
 @def short_text = "We are thrilled to announce that Piyush Gandhi has joined the Presage Group as Vice President, Operations and Business Development."
-
+@def img = "/assets/Piyush.jpg"
 @def rss_pubdate = Date(2021, 03, 17)
 
-~~~ 
-
-{{ blog_header "Announcement: <br> Piyush Gandhi "/assets/Piyush.jpg"}}
+\blogheader{}
 
 Piyush Gandhi, MBA, Captain
 
@@ -23,7 +21,3 @@ Piyush graduated from the Seneca Aviation Program (Class ’93) and earned an MB
 As a former customer at both Porter and Sunwing, Piyush fully understands and appreciates how a Presage intervention can positively impact an organization. At Presage, Piyush will utilize his skills, experience, and business acumen working directly with existing customers and developing new customers both in the aviation sector and other business verticals.
 
 Welcome Piyush!
-
-{{ blog_footer}}
-
-~~~
