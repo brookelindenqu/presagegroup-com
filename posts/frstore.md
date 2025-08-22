@@ -1,9 +1,9 @@
 @def title = "frstore: R interface to Google Firestore Database"
 @def author = "Umair Durrani"
 @def date = "2025-08-21"
-@def tags = ["Analytics", "R", "APIs", "Firestore", "Google"]
+@def tags = ["Analytics", "Google"]
 @def short_text = ""
-@def img_src = "/assets/images/frstore.png"
+@def img = "/assets/images/frstore.png"
 
 @def rss_pubdate = Date(2025, 08, 21)
 

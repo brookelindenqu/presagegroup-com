@@ -1,7 +1,7 @@
 @def title = "lineaR: R interface to linear.app"
 @def author = "Umair Durrani"
 @def date = "2025-08-21"
-@def tags = ["Analytics", "R", "APIs", "linear"]
+@def tags = ["Analytics", "linear"]
 @def short_text = ""
 
 @def rss_pubdate = Date(2025, 08, 21)
