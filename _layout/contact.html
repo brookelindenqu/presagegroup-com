@@ -5,7 +5,7 @@
 >
     <button
         @click="modalOpen=true"
-        class="inline-flex items-center justify-center h-10 px-4 py-2 text-sm font-medium transition-colors bg-white border rounded-md hover:bg-neutral-100 active:bg-white focus:bg-white focus:outline-none focus:ring-2 focus:ring-neutral-200/60 focus:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none"
+        class="inline-flex items-center justify-center h-10 px-4 py-2 text-xl text-gray-100 bg-[#00416b] font-medium transition-colors rounded-xl hover:text-neutral-100 focus:outline-none focus:text-neutral-100 disabled:opacity-50 hover:bg-[#00638a] focus:bg-[#00638a] disabled:pointer-events-none group w-max"
     >
         WORK WITH US
     </button>
@@ -64,6 +64,7 @@
                         <input
                             type="text"
                             placeholder="Name"
+                            id="contactName"
                             class="flex w-full h-10 px-3 py-2 text-sm bg-white border rounded-md border-neutral-300 ring-offset-background placeholder:text-neutral-500 focus:border-neutral-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-neutral-400 disabled:cursor-not-allowed disabled:opacity-50"
                         />
                     </div>
@@ -71,6 +72,7 @@
                         <input
                             type="text"
                             placeholder="Company"
+                            id="contactCompany"
                             class="flex w-full h-10 px-3 py-2 text-sm bg-white border rounded-md border-neutral-300 ring-offset-background placeholder:text-neutral-500 focus:border-neutral-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-neutral-400 disabled:cursor-not-allowed disabled:opacity-50"
                         />
                     </div>
@@ -78,6 +80,7 @@
                         <input
                             type="text"
                             placeholder="Phone Number"
+                            id="contactPhone"
                             class="flex w-full h-10 px-3 py-2 text-sm bg-white border rounded-md border-neutral-300 ring-offset-background placeholder:text-neutral-500 focus:border-neutral-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-neutral-400 disabled:cursor-not-allowed disabled:opacity-50"
                         />
                     </div>
@@ -85,6 +88,7 @@
                         <input
                             type="text"
                             placeholder="Email Address"
+                            id="contactEmail"
                             class="flex w-full h-10 px-3 py-2 text-sm bg-white border rounded-md border-neutral-300 ring-offset-background placeholder:text-neutral-500 focus:border-neutral-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-neutral-400 disabled:cursor-not-allowed disabled:opacity-50"
                         />
                     </div>
@@ -236,7 +240,7 @@
                             class="relative min-h-[38px] flex items-center justify-between w-full py-2 pl-3 pr-10 text-left bg-white border rounded-md shadow-sm cursor-default border-neutral-200/70 focus:outline-none text-sm"
                         >
                             <span
-                                x-text="selectedItem ? selectedItem.title : 'Select Item'"
+                                x-text="selectedItem ? selectedItem.title : 'Industry'"
                                 class="truncate"
                                 >Industry</span
                             >
@@ -319,10 +323,71 @@
                             x-init="resize()"
                             @input="resize()"
                             type="text"
+                            id="contactMessage"
                             placeholder="Type your message here."
                             class="flex w-full h-auto min-h-[80px] px-3 py-2 text-sm bg-white border rounded-md border-neutral-300 ring-offset-background placeholder:text-neutral-400 focus:border-neutral-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-neutral-400 disabled:cursor-not-allowed disabled:opacity-50"
                         ></textarea>
                     </div>
+                </div>
+                <div class="flex w-full items-center justify-center pt-2">
+                    <button
+                        id="createIssueBtn"
+                        @click="modalOpen=false"
+                        class="inline-flex items-center justify-center h-10 px-4 py-2 text-xl text-gray-100 bg-[#00416b] font-medium transition-colors rounded-xl hover:text-neutral-100 focus:outline-none focus:text-neutral-100 disabled:opacity-50 hover:bg-[#00638a] focus:bg-[#00638a] disabled:pointer-events-none group w-max"
+                    >
+                        SUBMIT
+                    </button>
+
+                    <script>
+                        const functionUrl =
+                            "https://contact-form-linear-254410625793.us-east1.run.app";
+
+                        document
+                            .getElementById("createIssueBtn")
+                            .addEventListener("click", async () => {
+                                // Get values from form fields
+                                const title =
+                                    document.getElementById("contactName")
+                                        .value +
+                                    " - " +
+                                    document.getElementById("contactCompany")
+                                        .value;
+                                const description =
+                                    "Phone: " +
+                                    document.getElementById("contactPhone")
+                                        .value +
+                                    "Email: " +
+                                    document.getElementById("contactEmail")
+                                        .value +
+                                    document.getElementById("contactMessage")
+                                        .value;
+
+                                try {
+                                    const response = await fetch(functionUrl, {
+                                        method: "POST",
+                                        headers: {
+                                            "Content-Type": "application/json",
+                                        },
+                                        body: JSON.stringify({
+                                            title: title,
+                                            description: description,
+                                            teamKey: "WLD",
+                                        }),
+                                    });
+
+                                    const result = await response.json();
+                                    console.log("Function response:", result);
+                                } catch (err) {
+                                    console.error(
+                                        "Error calling Cloud Function:",
+                                        err,
+                                    );
+                                    alert(
+                                        "Failed to submit your contact information. Please reach out to hello@presagegroup.com.",
+                                    );
+                                }
+                            });
+                    </script>
                 </div>
             </div>
         </div>
