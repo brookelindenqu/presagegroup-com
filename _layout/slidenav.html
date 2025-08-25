@@ -2,13 +2,16 @@
     x-data="{
         dropdownOpen: false
     }"
-    class="relative"
+    class="relative flex justify-end items-center"
 >
     <button
         @click="dropdownOpen=true"
-        class="absolute right-0 sm:visible md:invisible h-10 px-4 py-2 text-sm font-medium transition-colors bg-white rounded-md hover:bg-neutral-100 active:bg-white focus:bg-white disabled:opacity-50 disabled:pointer-events-none"
+        class="sm:visible md:invisible h-10 px-4 py-2 text-sm font-medium transition-colors bg-white rounded-md hover:bg-neutral-100 active:bg-white focus:bg-white disabled:opacity-50 disabled:pointer-events-none"
     >
-        <img src="/assets/burger-menu.svg" width="30px" />
+        <div class="flex space-x-4 w-16">
+            <img src="/assets/PresageLogo.png" width="30px" class="w-1/2" />
+            <img src="/assets/burger-menu.svg" width="30px" class="w-1/2" />
+        </div>
     </button>
 
     <div
