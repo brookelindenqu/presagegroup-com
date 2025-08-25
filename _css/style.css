@@ -406,7 +406,8 @@ h5 a:visited {
 }
 
 body {
-    margin-top: 20px;
+    margin-top: 0px;
+    padding-top: 0px;
 }
 .py-5 {
     padding-top: 3rem !important;
