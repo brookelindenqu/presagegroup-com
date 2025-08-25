@@ -115,30 +115,36 @@
                         <div
                             class="relative flex flex-col sm:flex-row sm:space-x-4"
                         >
-                            <a
-                                href="mailto:hello@presagegroup.com?subject=Introduction"
-                                class="flex items-center w-full px-6 py-3 mb-3 text-lg text-white bg-[#00416b] rounded-md sm:mb-0 hover:bg-[#00638a] sm:w-auto"
-                                data-primary="#00416b"
-                                data-rounded="rounded-md"
+                            <!-- opens a modal with a contact form. -->
+                            <div
+                                x-data="{ modalOpen: false }"
+                                @keydown.escape.window="modalOpen = false"
+                                class="relative z-50 w-auto h-auto"
                             >
-                                Start the Conversation
-                                <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    class="w-5 h-5 ml-1"
-                                    viewBox="0 0 24 24"
-                                    fill="none"
-                                    stroke="currentColor"
-                                    stroke-width="2"
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                    class="feather feather-arrow-right"
+                                <button
+                                    @click="modalOpen=true"
+                                    class="flex items-center w-full px-6 py-3 mb-3 text-lg text-white bg-[#00416b] rounded-md sm:mb-0 hover:bg-[#00638a] sm:w-auto"
                                 >
-                                    <line x1="5" y1="12" x2="19" y2="12"></line>
-                                    <polyline
-                                        points="12 5 19 12 12 19"
-                                    ></polyline>
-                                </svg>
-                            </a>
+                                    Start the Conversation
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        class="w-5 h-5 ml-1"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="2"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        class="feather feather-arrow-right"
+                                    >
+                                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                                        <polyline
+                                            points="12 5 19 12 12 19"
+                                        ></polyline>
+                                    </svg>
+                                </button>
+                                <!-- Contains the rest of the logic for the modal -->
+                                {{ insert contact.html }}
                         </div>
                     </div>
                 </div>

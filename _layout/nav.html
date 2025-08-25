@@ -28,11 +28,11 @@
     <div
         class="relative flex flex-wrap items-start w-full mx-auto font-medium md:items-center justify-between md:h-24"
     >
-        <a href="/" class="flex items-center font-extrabold text-white md:py-0">
+        <a href="/" class="flex items-center font-extrabold text-white md:py-0 w-48">
             <img
                 src="/assets/Presage_Logo_noTXT.svg"
-                height="150"
-                width="150"
+                height="120"
+                width="120"
             />
         </a>
         <div
@@ -40,7 +40,7 @@
         >
             <a
                 href="/"
-                class="inline-flex items-center justify-center h-10 px-4 py-2 text-xl font-medium text-gray-700 rounded-md hover:text-neutral-100 hover:bg-[#00638a] focus:outline-none disabled:opacity-50 disabled:pointer-events-none bg-background hover:bg-[#00638a] group w-max"
+                class="inline-flex items-center justify-center h-10 px-4 py-2 text-xl font-medium text-gray-700 rounded-md hover:text-neutral-100 text-neutral-100 hover:bg-[#00638a] focus:outline-none disabled:opacity-50 disabled:pointer-events-none bg-[#00416b] group w-max"
             >
                 HOME
             </a>
@@ -48,7 +48,7 @@
                 :class="{ 'bg-[#00638a]' : navigationMenu=='about-us', 'hover:bg-[#00638a]' : navigationMenu!='about-us' }"
                 @mouseover="navigationMenuOpen=true; navigationMenuReposition($el); navigationMenu='about-us'"
                 @mouseleave="navigationMenuLeave()"
-                class="inline-flex items-center justify-center h-10 px-4 py-2 text-xl text-gray-700 font-medium transition-colors rounded-md hover:text-neutral-100 focus:outline-none focus:text-neutral-100 disabled:opacity-50 hover:bg-[#00638a] focus:bg-[#00638a] disabled:pointer-events-none group w-max"
+                class="inline-flex items-center justify-center h-10 px-4 py-2 text-xl font-medium text-gray-700 rounded-md hover:text-neutral-100 text-neutral-100 hover:bg-[#00638a] focus:outline-none disabled:opacity-50 disabled:pointer-events-none bg-[#00416b] group w-max"
             >
                 <span>ABOUT US</span>
                 <svg
@@ -70,7 +70,7 @@
                 :class="{ 'bg-[#00638a]' : navigationMenu=='learn-more', 'hover:bg-[#00638a]' : navigationMenu!='learn-more' }"
                 @mouseover="navigationMenuOpen=true; navigationMenuReposition($el); navigationMenu='learn-more'"
                 @mouseleave="navigationMenuLeave()"
-                class="inline-flex items-center justify-center h-10 px-4 py-2 text-xl text-gray-700 font-medium transition-colors rounded-md hover:text-neutral-100 focus:outline-none focus:text-neutral-100 disabled:opacity-50 hover:bg-[#00638a] focus:bg-[#00638a] disabled:pointer-events-none group w-max"
+                class="inline-flex items-center justify-center h-10 px-4 py-2 text-xl font-medium text-gray-700 rounded-md hover:text-neutral-100 text-neutral-100 hover:bg-[#00638a] focus:outline-none disabled:opacity-50 disabled:pointer-events-none bg-[#00416b] group w-max"
             >
                 <span>SERVICES</span>
                 <svg
@@ -91,12 +91,25 @@
         </div>
 
         <div
-            class="relative top-0 left-0 z-40 items-center hidden w-1/4 h-full px-3 text-sm bg-gray-900 bg-opacity-50 md:w-auto md:bg-transparent md:p-0 md:relative md:flex"
+            class="relative z-40 items-center justify-end hidden w-1/4 h-auto text-sm bg-gray-900 bg-opacity-50 md:w-auto md:bg-transparent md:relative md:flex"
         >
             <div
-                class="flex flex-col items-center justify-end w-full h-full pt-2 md:w-full md:flex-row md:py-0"
+                class="flex flex-col items-center justify-end w-full h-auto md:w-full md:flex-row"
             >
-                {{ insert contact.html }}
+                <!-- opens a modal with a contact form. -->
+                <div
+                    x-data="{ modalOpen: false }"
+                    @keydown.escape.window="modalOpen = false"
+                    class="relative z-50 w-auto h-auto"
+                >
+                    <button
+                        @click="modalOpen=true"
+                        class="inline-flex items-center justify-center h-10 px-4 py-2 text-xl text-gray-100 bg-[#e76254] font-medium transition-colors rounded-xl hover:text-neutral-100 focus:outline-none focus:text-neutral-100 disabled:opacity-50 hover:bg-[#f5a455] focus:bg-[#f5a455] disabled:pointer-events-none group w-max"
+                    >
+                        WORK WITH US
+                    </button>
+                    <!-- Contains the rest of the logic for the modal -->
+                    {{ insert contact.html }}
             </div>
         </div>
     </div>
@@ -254,3 +267,4 @@
         </div>
     </div>
 </nav>
+<div class="hidden md:relative md:flex h-1 my-1 -mx-1 bg-[#00415b]"></div>
